@@ -24,7 +24,7 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 25% 75%;
     @media screen and (min-width: 720px) and (max-width:1080px) {
-      grid-template-columns: 36% 65%;
+      grid-template-columns: 35% 65%;
     }
   }
 `;
@@ -35,22 +35,22 @@ export default function Chat() {
   const [currentUser, setCurrentUser] = useState(undefined);
 
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (!localStorage.getItem('chat-app-user')) {
-          navigate('/login');
-        } else {
-          setCurrentUser(JSON.parse(localStorage.getItem('chat-app-user')));
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       if (!localStorage.getItem('chat-app-user')) {
+  //         navigate('/login');
+  //       } else {
+  //         setCurrentUser(JSON.parse(localStorage.getItem('chat-app-user')));
+  //       }
+  //     } catch (error) {
+  //       console.error('Error fetching user data:', error);
+  //     }
+  //   };
   
-    fetchData();
+  //   fetchData();
   
-  }, []);
+  // }, []);
   
   useEffect(() => {
     const fetchContacts = async () => {
